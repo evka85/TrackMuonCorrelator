@@ -39,6 +39,7 @@ entity correlator is
         
         -- Muon links
         muon_downlinks_i        : in ldata(G_MUON_LINK_NUM - 1 downto 0);
+        muon_uplinks_o          : out ldata(G_MUON_LINK_NUM - 1 downto 0);
         muon_link_clk_i         : in std_logic;
         
         -- IPbus
@@ -148,6 +149,18 @@ begin
             button_i => LED_raw_button_state,
             LEDs_o   => LEDs
         );
+
+    --================================--
+    -- dummy muon uplink data   
+    --================================--
+    
+    -- do not need the muon uplink really, so just assign dummy value
+    g_dummy_muon_uplinks: for i in 0 to G_MUON_LINK_NUM - 1 generate
+        muon_uplinks_o(i).data <= x"BAADCAFE";
+        muon_uplinks_o(i).valid <= '1';
+        muon_uplinks_o(i).strobe <= '1';
+        muon_uplinks_o(i).start <= '0';
+    end generate;
 
     --================================--
     -- VIO for LEDs  

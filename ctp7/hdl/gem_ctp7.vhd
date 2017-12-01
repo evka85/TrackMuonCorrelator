@@ -280,6 +280,7 @@ begin
             ttc_commands_i          => ttc_commands,
 
             muon_downlinks_i        => fiber_muon_downlinks,
+            muon_uplinks_o          => fiber_muon_uplinks,
             muon_link_clk_i         => muon_link_clk,
                         
             ipb_reset_i             => ipb_reset,
@@ -302,13 +303,6 @@ begin
     g_gem_links : for i in 0 to CFG_MUON_LINK_NUM - 1 generate
         fiber_muon_downlinks(i) <= gth_muon_downlinks(CFG_CXP_FIBER_TO_GTH_MAP(CFG_MUON_LINK_CONFIG_ARR(i)).rx);
         gth_muon_uplinks(CFG_CXP_FIBER_TO_GTH_MAP(CFG_MUON_LINK_CONFIG_ARR(i)).tx) <= fiber_muon_uplinks(i);
-
-        -- do not need the muon uplink really, so just assign dummy value
-        --fiber_muon_uplinks(i) <= LWORD_NULL;
-        fiber_muon_uplinks(i).data <= x"BAADCAFE";
-        fiber_muon_uplinks(i).valid <= '1';
-        fiber_muon_uplinks(i).strobe <= '1';
-        fiber_muon_uplinks(i).start <= '0';
     end generate; 
 
     process(muon_link_clk)
