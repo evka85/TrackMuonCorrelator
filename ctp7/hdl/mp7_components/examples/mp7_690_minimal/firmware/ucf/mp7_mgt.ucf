@@ -1,0 +1,33 @@
+# Datapath constraints
+
+INST "datapath/rgen[0].region/*" AREA_GROUP=quad_x1y8;
+INST "datapath/rgen[1].region/*" AREA_GROUP=quad_x1y7;
+INST "datapath/rgen[2].region/*" AREA_GROUP=quad_x1y6;
+INST "datapath/rgen[3].region/*" AREA_GROUP=quad_x1y5;
+INST "datapath/rgen[4].region/*" AREA_GROUP=quad_x1y4;
+INST "datapath/rgen[5].region/*" AREA_GROUP=quad_x1y3;
+INST "datapath/rgen[6].region/*" AREA_GROUP=quad_x1y2;
+INST "datapath/rgen[7].region/*" AREA_GROUP=quad_x1y1;
+INST "datapath/rgen[8].region/*" AREA_GROUP=quad_x1y0;
+INST datapath/rgen[8].region/daq_bus_out* AREA_GROUP=payload_8;
+INST datapath/rgen[8].region/ttc_cmd_out* AREA_GROUP=payload_8;
+#INST datapath/rgen[8].region/cap_bus_out* AREA_GROUP=payload_8;
+INST datapath/rgen[8].region/rst_out AREA_GROUP=payload_8;
+INST datapath/rgen[8].region/lock_out AREA_GROUP=payload_8;
+INST "datapath/rgen[9].region/*" AREA_GROUP=quad_x0y0;
+INST "datapath/rgen[10].region/*" AREA_GROUP=quad_x0y1;
+INST "datapath/rgen[11].region/*" AREA_GROUP=quad_x0y2;
+INST "datapath/rgen[12].region/*" AREA_GROUP=quad_x0y3;
+INST "datapath/rgen[13].region/*" AREA_GROUP=quad_x0y4;
+INST "datapath/rgen[14].region/*" AREA_GROUP=quad_x0y5;
+INST "datapath/rgen[15].region/*" AREA_GROUP=quad_x0y6;
+INST "datapath/rgen[16].region/*" AREA_GROUP=quad_x0y7;
+INST "datapath/rgen[17].region/*" AREA_GROUP=quad_x0y8;
+# INST "datapath/rgen[18].region/*" AREA_GROUP=quad_x0y9;
+
+INST datapath/rgen[0].region/*/g_gt_instances[0]*/gthe2_i LOC=GTHE2_CHANNEL_X1Y35;
+INST datapath/rgen[0].region/*/g_gt_instances[1]*/gthe2_i LOC=GTHE2_CHANNEL_X1Y34;
+INST datapath/rgen[0].region/*/g_gt_instances[2]*/gthe2_i LOC=GTHE2_CHANNEL_X1Y33;
+INST datapath/rgen[0].region/*/g_gt_instances[3]*/gthe2_i LOC=GTHE2_CHANNEL_X1Y32;
+INST datapath/rgen[0].region/*/gthe2_common_i LOC=GTHE2_COMMON_X1Y8;
+

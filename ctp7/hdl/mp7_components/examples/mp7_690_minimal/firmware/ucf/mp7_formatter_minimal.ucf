@@ -1,0 +1,4 @@
+# Constraints specific to null_algo
+
+INST formatter/rgen[0]* AREA_GROUP=payload_0;
+

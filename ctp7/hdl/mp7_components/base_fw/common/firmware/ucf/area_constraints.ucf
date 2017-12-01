@@ -1,0 +1,9 @@
+# Common area constraints for MP7
+
+INST "infra/*" AREA_GROUP=ctrl;
+INST "ctrl/*" AREA_GROUP=ctrl;
+INST "ttc/*" AREA_GROUP=ctrl;
+INST "readout/*" AREA_GROUP=readout;
+INST "readout/amc13/*" AREA_GROUP=ctrl;
+INST "payload/*" AREA_GROUP=payload;
+
